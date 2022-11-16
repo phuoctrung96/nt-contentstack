@@ -1,0 +1,76 @@
+/****************************************************
+
+	Tabs
+
+****************************************************/
+.tabs {
+  .tabs__trigger {
+    position: relative;
+    display: inline-block;
+    font-family: $display-font-stack;
+    font-weight: 700;
+    font-size: 16px;
+    color: $text-color;
+    padding: 1.25rem 70px;
+    opacity: 0.68;
+    transition: color 0.1s, opacity 0.1s;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background-color: $brand-color;
+      transform: scale(0);
+      transform-origin: 50% 100%;
+      transition: transform 0.1s;
+    }
+
+    &:hover,
+    &:focus {
+      color: $brand-color;
+      opacity: 1;
+    }
+
+    &.active {
+      color: $text-color;
+      opacity: 1;
+
+      &:before {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .tabs__content {
+    position: relative;
+    min-height: 690px;
+    background: $grey-bg-color;
+    padding: 50px 0;
+  }
+}
+
+/****************************************************
+	FAQs
+****************************************************/
+.tabs {
+  .faqs {
+    margin: 0;
+
+    .xlarge-2,
+    .xlarge-3 {
+      display: none;
+    }
+
+    .faq__list {
+      width: 100%;
+      columns: 2;
+    }
+
+    .faq {
+      padding: 0 15px;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+/****************************************************
+
+    Regions
+    
+****************************************************/
+@mixin region($region, $color, $heading, $text, $rollover, $instagram) {
+  body {
+    &.#{$region} {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        &.regional {
+          color: $heading;
+        }
+      }
+    }
+  }
+}
+
+// region-pages ($region, $color, $heading, $text, $rollover, $instagram) {
+@include region(
+  darwin,
+  $darwin-color,
+  $darwin-color,
+  #fff,
+  #004d65,
+  rgba($darwin-color, 0.9)
+);
+@include region(
+  alice,
+  $alice-color,
+  $alice-color,
+  #fff,
+  #90141a,
+  rgba($alice-color, 0.9)
+);
+@include region(
+  uluru,
+  $uluru-color,
+  $uluru-color,
+  #fff,
+  #600806,
+  rgba($uluru-color, 0.9)
+);
+@include region(
+  kakadu,
+  $kakadu-color,
+  $kakadu-color,
+  #fff,
+  #405e29,
+  rgba($kakadu-color, 0.9)
+);
+@include region(
+  katherine,
+  $katherine-color,
+  $katherine-color,
+  #fff,
+  #4e4c20,
+  rgba($katherine-color, 0.9)
+);
+@include region(
+  arnhem,
+  $arnhem-color,
+  $arnhem-color,
+  #fff,
+  #004722,
+  rgba($arnhem-color, 0.9)
+);
+@include region(
+  tennant,
+  $tennant-color,
+  $tennant-color,
+  #fff,
+  #85410d,
+  rgba($tennant-color, 0.9)
+);

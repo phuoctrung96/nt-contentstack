@@ -1,0 +1,439 @@
+/****************************************************
+	
+    Banners
+    
+****************************************************/
+/* Default hero sizes*/
+$default-hero-height: 70vh;
+$default-hero-min-height: 360px;
+$default-hero-max-height: 800px;
+
+/* Small-height hero sizes */
+$small-hero-height: 50vh;
+
+/****************************************************
+    Banner slider
+****************************************************/
+.bannerCarousel {
+  position: relative;
+  overflow: hidden;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0;
+    z-index: 2;
+  }
+
+  &:before {
+    top: -1px;
+    background-image: icon(curved-bottom-3, #fff);
+    padding-top: calc(15 / 1920 * 100%);
+  }
+
+  &:after {
+    bottom: -1px;
+    background-image: icon(curved-top-1, #fff);
+    padding-top: calc(14 / 1920 * 100%);
+  }
+
+  .flickity-viewport {
+    height: 100% !important;
+  }
+
+  .banner__slider {
+    height: $default-hero-height;
+    min-height: $default-hero-min-height;
+    max-height: $default-hero-max-height;
+  }
+
+  .slide {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: none;
+
+    &:first-child {
+      display: block;
+    }
+  }
+}
+
+/****************************************************
+    Banner - small height
+****************************************************/
+.bannerCarousel {
+  &.small-height {
+    .hero__slider {
+      height: $small-hero-height;
+    }
+
+    .banner {
+      h2 {
+        font-size: 28px;
+
+        @include breakpoint(medium) {
+          font-size: 37px;
+        }
+
+        @include breakpoint(large) {
+          font-size: 41px;
+        }
+
+        @include breakpoint(xlarge) {
+          font-size: 51px;
+        }
+
+        @include breakpoint(xxlarge) {
+          font-size: 60px;
+        }
+      }
+    }
+  }
+}
+
+/****************************************************
+    Banner 
+****************************************************/
+.banner {
+  height: 100%;
+
+  &.darken {
+    .banner__image {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.1);
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1) 30%,
+          #000 250%
+        );
+      }
+    }
+  }
+
+  .banner__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .banner__inner {
+    position: relative;
+    height: 100%;
+    padding-top: 0.3rem;
+    padding-bottom: 1rem;
+  }
+
+  .banner__content {
+    height: 100%;
+  }
+}
+
+/****************************************************
+    Banner content
+****************************************************/
+.banner {
+  h1 {
+    color: #fff;
+    text-shadow: $heading-shadow;
+
+    span {
+      display: block;
+      font-size: 0.5em;
+      margin-top: 0.4em;
+    }
+  }
+
+  h2 {
+    @extend h1;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+    text-shadow: $sub-heading-shadow;
+    margin-bottom: 1rem;
+
+    @include breakpoint(medium) {
+      font-size: $font-size;
+    }
+
+    @include breakpoint(large) {
+      font-size: $font-size-large;
+      margin: 10px auto;
+    }
+  }
+
+  a {
+    color: #fff;
+  }
+
+  .button {
+    padding: 1em 2.6em;
+    margin: 1rem 1% 0;
+
+    @include breakpoint(xlarge) {
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+/****************************************************
+    Banner - caption
+****************************************************/
+.banner {
+  .banner__caption,
+  .banner__gallery {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 8%;
+    font-size: 13px;
+    line-height: 1.2;
+    color: #fff;
+    text-align: left;
+    text-shadow: 0 0 10px #2b2b2b;
+    padding: 7px 5px 7px 1.3rem;
+    transform: translate(0);
+    pointer-events: auto;
+  }
+
+  .banner__caption {
+    .svg-icon {
+      width: 30px;
+      height: 30px;
+      background-image: icon(external-link, #fff);
+      vertical-align: middle;
+    }
+  }
+
+  .banner__captionLink {
+    display: inline-block;
+
+    text-decoration: none;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 13px;
+      height: 13px;
+      background: icon(chevron-right-circle, #fff) center no-repeat;
+      transform: translateY(-50%);
+      transition: left 0.1s;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+
+      &:before {
+        left: 4px;
+      }
+    }
+  }
+}
+
+/****************************************************
+    Banner - gallery
+****************************************************/
+.banner {
+  .banner__gallery {
+    .svg-icon {
+      width: 26px;
+      height: 26px;
+      background-image: icon(camera, #fff);
+    }
+
+    .gallery__link {
+      text-decoration: none;
+      display: inline-block;
+
+      &:hover,
+      &:focus {
+        .gallery__icon {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    .gallery__icon {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      vertical-align: middle;
+      transition: transform 0.1s linear;
+
+      &:before {
+        margin-right: 0;
+      }
+    }
+
+    .gallery__text {
+      display: inline-block;
+      font-family: $display-font-stack;
+      font-size: 14px;
+      line-height: 1.1;
+      color: #fff;
+      text-align: left;
+      letter-spacing: 0.01em;
+      text-shadow: 1px 0 30px rgba(0, 0, 0, 0.4);
+      margin-left: 2px;
+      vertical-align: middle;
+
+      @include breakpoint(medium) {
+        margin-left: 5px;
+      }
+
+      em {
+        display: block;
+        font-style: normal;
+        font-size: 1.4em;
+      }
+    }
+  }
+}
+
+/****************************************************
+    Banner - static content
+****************************************************/
+.bannerCarousel {
+  .static__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    text-align: center;
+    pointer-events: none;
+
+    a {
+      pointer-events: auto;
+    }
+  }
+
+  .static__content {
+    height: 100%;
+  }
+}
+
+/****************************************************
+  Flickity
+****************************************************/
+.bannerCarousel {
+  .flickity-enabled {
+    .slide,
+    .static__wrapper {
+      display: block;
+    }
+  }
+
+  /****************************************************
+    Flickity - Dots
+  ****************************************************/
+  .flickity-page-dots {
+    bottom: 30px;
+
+    .dot {
+      background-color: rgba(209, 208, 209, 0.5);
+      margin: 0 4px;
+      opacity: 1;
+
+      &.is-selected {
+        background-color: $brand-color;
+      }
+    }
+  }
+
+  /****************************************************
+    Flickity - Arrows
+  ****************************************************/
+  .flickity-prev-next-button {
+    width: 50px;
+    height: 50px;
+    background: none;
+    opacity: 0.25;
+    transition: opacity 0.1s linear;
+
+    &:hover,
+    &:focus {
+      background: none;
+      opacity: 0.4;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 8%;
+      left: 8%;
+      width: 84%;
+      height: 84%;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0.5px 1.3px 2.3px rgba(0, 0, 0, 0.1),
+        4px 10px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    &.next {
+      right: 5px;
+    }
+
+    &.previous {
+      left: 5px;
+    }
+
+    .flickity-button-icon {
+      top: 50%;
+      left: 50%;
+      width: 40%;
+      height: 40%;
+      fill: $brand-color;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  /****************************************************
+    Flickity - Fade Effect 
+  ****************************************************/
+  .flickity--fade {
+    .flickity-slider {
+      transform: none !important;
+
+      .slide {
+        position: absolute;
+        opacity: 0;
+        transform: none !important;
+        transition: opacity 1s ease-in-out 0.3s;
+        z-index: -1;
+      }
+
+      .slide.is-selected {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+        z-index: 1;
+      }
+    }
+
+    .flickity-prev-next-button,
+    .flickity-page-dots {
+      z-index: 3;
+    }
+  }
+}

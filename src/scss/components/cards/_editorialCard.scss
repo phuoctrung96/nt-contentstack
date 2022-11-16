@@ -1,0 +1,198 @@
+/****************************************************
+	
+    Editorial Card
+    
+****************************************************/
+.editorialCard {
+  position: relative;
+  font-size: 1.19em;
+  background: $grey-25-color;
+
+  .card__link {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      &:before {
+        background: rgba($brand-color, 0.88);
+
+        @media (hover: none) {
+          background: transparent;
+        }
+      }
+
+      .card__overlay {
+        transform: translateY(0);
+
+        @media (hover: none) {
+          transform: translateY(100%);
+        }
+      }
+
+      .card__content {
+        text-shadow: 0;
+        transform: translateY(0);
+
+        @media (hover: none) {
+          text-shadow: 0 1px 10px rgba(#000, 0.7);
+          transform: translateY(-100%) translateY(-1.4em);
+        }
+
+        .card__category {
+          opacity: 0;
+          transform: scaleY(0);
+
+          @media (hover: none) {
+            opacity: 1;
+            transform: scaleY(1);
+          }
+        }
+      }
+
+      .card__details {
+        opacity: 1;
+
+        @media (hover: none) {
+          opacity: 0;
+        }
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: transparent;
+      transition: background-color 0.3s linear;
+      transition-delay: 0.1s;
+    }
+  }
+
+  .card__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    padding: 0.8em 0.9em 1em;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+    transition-delay: 0.1s;
+  }
+
+  .card__content {
+    padding-right: 20px; /* room for add to trip button */
+    text-shadow: 0 1px 10px rgba(#000, 0.7);
+    transform: translateY(-100%) translateY(-1.4em);
+    transition: transform 0.3s ease-out, text-shadow 0.3s ease-out;
+    transition-delay: 0.1s;
+  }
+
+  .card__heading {
+    font-weight: 400;
+    font-size: 1.17em;
+    line-height: 1.15;
+    margin: 0 0 0.2em;
+  }
+
+  .card__category {
+    position: absolute;
+    bottom: 100%;
+    font-size: 0.7em;
+    font-size: 0.6em;
+    line-height: 1.5;
+    margin-bottom: 0;
+    opacity: 1;
+    transform: scaleY(1);
+    transition: opacity 0.15s, transform 0.15s;
+    transition-delay: 0.1s;
+  }
+
+  .card__details {
+    line-height: 1.7;
+    font-size: 0.78em;
+    opacity: 0;
+    transition: opacity 0.2s;
+    transition-delay: 0.1s;
+
+    p {
+      margin-bottom: 0.7em;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  .card__cta {
+    font-weight: 700;
+    font-family: $display-font-stack;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+    .svg-icon {
+      width: 1em;
+      height: 1em;
+      margin-right: 0.05em;
+      margin-top: -0.2em;
+      vertical-align: middle;
+    }
+  }
+
+  .addMyTrip {
+    position: absolute;
+    top: 0;
+    right: 2px;
+    padding: 5px;
+
+    .svg-icon {
+      stroke: #fff;
+    }
+
+    @include breakpoint(medium) {
+      padding: 7px;
+    }
+  }
+}
+
+/****************************************************
+    Small Cards - less space for info
+****************************************************/
+.small {
+  .editorialCard {
+    .card__content {
+      line-height: 1.3;
+
+      p {
+        display: none;
+
+        @include breakpoint(30em) {
+          display: -webkit-box;
+        }
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .editorialListing {
+    .editorialCard {
+      .card__link:before,
+      .card__overlay,
+      .card__info,
+      .card__content,
+      .card__info h5 {
+        transition: none;
+      }
+    }
+  }
+}

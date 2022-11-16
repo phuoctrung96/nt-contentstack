@@ -1,0 +1,223 @@
+/****************************************************
+	
+    Buttons
+    
+****************************************************/
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  font: 800 14px/1 $display-font-stack;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  background: $highlight-color;
+  padding: 0.9em 4em 0.8em;
+  margin: 0 0 1rem;
+  border-radius: 3rem;
+  transition: background-color $hover-transition-speed linear;
+  cursor: pointer;
+
+  &[target="_blank"]:after {
+    content: "";
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    background-image: icon(external-link, #fff);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    vertical-align: top;
+  }
+
+  &:hover,
+  &:focus {
+    background: $highlight-color-dark;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+  }
+}
+
+/****************************************************
+    Secondary
+****************************************************/
+.button {
+  &--secondary {
+    color: #fff;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    background: $brand-color;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background: $brand-color-dark;
+    }
+  }
+}
+
+/****************************************************
+    Inverted
+****************************************************/
+.button {
+  &--inverted {
+    background: #fff;
+    color: $primary-color;
+    transition: opacity $hover-transition-speed linear;
+
+    &[target="_blank"]:after {
+      background-image: icon(external-link, $primary-color);
+    }
+
+    &:hover,
+    &:focus {
+      background: #fff;
+      color: $primary-color;
+      opacity: 0.8;
+    }
+  }
+}
+
+/****************************************************
+    System
+****************************************************/
+.button {
+  &--system {
+    /*makes grey buttons that look like the OS sorta*/
+    background: #e6e6e6;
+    color: $grey-text-on-grey-bg-color;
+    text-transform: none;
+    font-family: $body-font-stack;
+    font-weight: bold;
+    border: 1px solid #d3d3d3;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.3);
+
+    &:hover,
+    &:focus {
+      background: #d6d6d6;
+      color: #3d3b3a;
+      box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+/****************************************************
+    System
+****************************************************/
+.button {
+  &--expand {
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+/****************************************************
+    Show More
+****************************************************/
+// .button {
+//   &--show-more {
+//     font-family: $body-font-stack;
+//     font-size: 18px;
+//     font-weight: normal;
+//     color: $brand-color;
+//     text-transform: none;
+//     background: #fbf9f9;
+//     padding: 0.5rem 0.5rem 0.5rem 1rem;
+//     margin: 10px auto 0;
+//     border: 1px solid $brand-color;
+
+//     &:hover,
+//     &:focus {
+//       background: #eee;
+//       color: $brand-color;
+//     }
+
+//     &:after {
+//       display: inline-block;
+//       content: "";
+//       height: 16px;
+//       width: 20px;
+//       margin-left: 2px;
+//       vertical-align: middle;
+//     }
+
+//     &.more:after {
+//       background: icon(chevron-down, $brand-color);
+//     }
+
+//     &.less:after {
+//       background: icon(chevron-up, $brand-color);
+//     }
+//   }
+
+//   span {
+//     white-space: nowrap;
+//   }
+// }
+
+/****************************************************
+    Brand Button
+****************************************************/
+.brand-button {
+  // this is a global style for buttons
+  border-radius: 4px;
+  clip-path: url(#brand-button);
+}
+
+/****************************************************
+    Close Button
+****************************************************/
+.close-button {
+  position: absolute;
+  color: #8a8a8a;
+  cursor: pointer;
+  font-size: 2em;
+  line-height: 1;
+}
+
+/****************************************************
+    Button Row
+****************************************************/
+.button.btn-row__button {
+  width: 97.5%;
+  padding: 1em;
+  margin: 0 1.25% 0.75rem;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+
+  @include breakpoint(30em) {
+    width: 47.5%;
+  }
+
+  @include breakpoint(xlarge) {
+    width: 22.5%;
+  }
+
+  > span {
+    vertical-align: middle;
+    line-height: 1.2;
+  }
+
+  &[target="_blank"] {
+    &:after {
+      display: none;
+    }
+
+    // > div > div:after {
+    //   content: "";
+    //   display: inline-block;
+    //   height: 0.9em;
+    //   width: 0.9em;
+    //   background-image: icon(external-link, #fff);
+    //   background-size: contain;
+    //   background-position: center;
+    //   background-repeat: no-repeat;
+    //   margin-left: 4px;
+    //   vertical-align: middle;
+    // }
+  }
+}

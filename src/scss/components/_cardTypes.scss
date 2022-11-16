@@ -1,0 +1,72 @@
+/****************************************************
+	
+    Card Types
+    
+****************************************************/
+.card {
+  // height: 100%;
+
+  // .card__inner {
+  //   height: 100%;
+  // }
+
+  .card__link {
+    display: block;
+  }
+
+  .card__image {
+    background-color: $grey-25-color;
+  }
+}
+
+/****************************************************
+    Nav Card
+****************************************************/
+.navCard {
+  // margin-bottom: 20px;
+
+  .card__link {
+    &:hover,
+    &:focus {
+      .card__image {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .card__image {
+    transition: opacity 0.2s;
+  }
+
+  .card__heading {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.2;
+    padding: 10px 0;
+    margin: 0;
+  }
+}
+
+/****************************************************
+    Nav Links Card
+****************************************************/
+.navLinksCard {
+  .card__image {
+    max-width: 195px;
+  }
+
+  .card__heading {
+    margin-top: 22px;
+  }
+
+  li a {
+    font-size: 15.5px;
+  }
+}
+
+/****************************************************
+    Cards
+****************************************************/
+@import "./cards/articleCard";
+@import "./cards/_dynamicCard";
+@import "./cards/editorialCard";

@@ -1,0 +1,132 @@
+/****************************************************
+
+    Variables
+
+****************************************************/
+
+/****************************************************
+    Brand Colors
+****************************************************/
+$brand-color: #1f1f5f;
+$brand-color-dark: #05114d;
+$brand-color-dark-2: #00003b;
+$brand-color-dark-3: #030026;
+$brand-color-dark-4: #01000d;
+$brand-color-light: #575787;
+$brand-color-light-2: #8f8faf;
+$brand-color-light-3: #c7c7d7;
+$brand-color-light-4: #e9e9ef;
+
+// brand greys
+$black-color: #454347;
+$grey-80-color: #6a696c; // not an official brand colour but needed for grey on top of light grey backgrounds
+$grey-75-color: #747275;
+$grey-50-color: #a2a1a3;
+$grey-25-color: #d1d0d1;
+$grey-10-color: #ececed;
+
+/****************************************************
+    Region Colors
+****************************************************/
+// these are the WCAG safe colours
+$darwin-color: #008199;
+$alice-color: #cb3e0b;
+$uluru-color: #9d0e13;
+$kakadu-color: #637e17;
+$katherine-color: #7d7737;
+$arnhem-color: #4b764d;
+$tennant-color: #b95d03;
+
+// these are the non-WCAG safe alternatives, preferred if not for small text applications
+$darwin-color-primary: #05a0bd;
+$kakadu-color-primary: #7d9f1f;
+$tennant-color-primary: #d77f00;
+
+/****************************************************
+    Site Colors
+****************************************************/
+$text-color: $black-color;
+$highlight-color: #c91a51;
+$highlight-color-dark: #9a0937;
+$highlight-color-dark-2: #7d0128;
+$highlight-color-75: #d7537d;
+$highlight-color-50: #e48da8;
+$highlight-color-25: #f2c6d3;
+$highlight-color-10: #fae8ee;
+
+$alert-color: #fbc834;
+
+// variable aliases
+$primary-color: $brand-color;
+$primary-color-hover: $brand-color-dark;
+$primary-color-dark: $brand-color-dark;
+$secondary-color: $text-color;
+$secondary-color-hover: #646464;
+
+$grey-bg-color: $brand-color-light-4;
+$grey-text-color: $grey-75-color;
+$grey-line-color: $grey-25-color;
+$grey-light-text-on-grey-bg-color: $grey-80-color;
+$grey-text-on-grey-bg-color: $black-color;
+$grey-line-on-grey-bg-color: $grey-50-color;
+$grey-bg-border-color: $brand-color-light-4;
+$black-text-on-grey-bg-color: $black-color;
+
+/****************************************************
+    Spacing
+****************************************************/
+$section-margin-small: 2.5rem;
+$section-margin-medium: 4rem;
+$section-margin-large: 6rem;
+$section-margin-large-squished: 5rem;
+$hero-margin-small: 2rem;
+$hero-margin: 3rem;
+
+/****************************************************
+    Text
+****************************************************/
+$font-size: 16.5px;
+$font-size-large: 18px;
+
+$heading-shadow: 1px 0 30px rgba(#000, 0.4);
+$sub-heading-shadow: 1px 1px 10px rgba(#000, 0.9);
+$text-shadow: 1px 1px 1px $text-color;
+
+/****************************************************
+    Links
+****************************************************/
+
+/****************************************************
+    Sections
+****************************************************/
+$section-margin-small: 2.5rem;
+$section-margin-medium: 4rem;
+$section-margin-large: 6rem;
+$section-margin-large-squished: 5rem;
+$hero-margin-small: 2rem;
+$hero-margin: 3rem;
+
+/****************************************************
+    Inputs
+****************************************************/
+
+/****************************************************
+    Tables
+****************************************************/
+
+/****************************************************
+    Other
+****************************************************/
+$hover-transition-speed: 0.1s;
+
+/****************************************************
+    Replace later
+****************************************************/
+$display-font-stack: Ubuntu, "helvetica neue", Helvetica, Roboto, Arial,
+  sans-serif; // $header-font-family
+$body-font-stack: "Open Sans", "Helvetica Neue", Helvetica, Roboto, Arial,
+  sans-serif; // $body-font-family
+$body-font-size-small: $font-size;
+$body-font-size: $font-size;
+$body-font-size-large: $font-size-large;
+$default-color: $brand-color;

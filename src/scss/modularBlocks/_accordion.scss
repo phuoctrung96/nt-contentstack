@@ -1,0 +1,86 @@
+/****************************************************
+
+	Accordion
+
+****************************************************/
+$accordion-speed: 0.3s;
+
+.accordion {
+  border-bottom: 1px solid $grey-line-color;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &.active {
+    > .accordion__heading {
+      .accordion__icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    .accordion__content {
+      opacity: 1;
+    }
+  }
+
+  .accordion__heading {
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+    padding: 1.25rem 3rem 1.25rem 1rem;
+
+    h3 {
+      margin: 0;
+    }
+  }
+
+  .accordion__icon {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    width: 22px;
+    margin: -12px -4px 0 0;
+    transition: transform 0.3s;
+  }
+
+  .accordion__content {
+    opacity: 0;
+    overflow: hidden;
+    transition: height $accordion-speed ease-in-out,
+      opacity $accordion-speed ease-in-out;
+  }
+
+  .accordion__contentInner {
+    font-size: em(16px);
+    padding: 0 1rem 1rem;
+  }
+}
+
+@include breakpoint(medium) {
+  .accordion {
+    .accordion__trigger {
+      top: 13px;
+      width: 36px;
+      height: 18px;
+    }
+  }
+}
+
+/****************************************************
+	Left Align Trigger
+****************************************************/
+@include breakpoint(large) {
+  .accordion.left {
+    .accordion__trigger {
+      left: -70px;
+      right: auto;
+    }
+  }
+}
+
+/****************************************************
+	Mobile Menu Accordion
+****************************************************/
+.mobMenu__accordion {
+}

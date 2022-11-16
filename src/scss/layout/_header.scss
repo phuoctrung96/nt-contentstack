@@ -1,0 +1,468 @@
+/****************************************************
+
+	Header
+
+****************************************************/
+// used to trigger media queries for when the viewport is short in height
+$shortviewportheight: 750px;
+
+header {
+  position: fixed; /* IE11 fallback */
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 68px;
+  padding-top: env(safe-area-inset-top); // Adds padding for iPhone X etc notch
+  transition: background-color 0.5s, box-shadow 0.5s, height 0.5s;
+  z-index: z("header");
+
+  @include breakpoint(medium) {
+    height: 85px;
+  }
+
+  @include breakpoint(large) {
+    height: 90px;
+    padding-top: 10px;
+  }
+
+  @media screen and (min-width: 40em) and (max-height: $shortviewportheight) {
+    height: 78px;
+  }
+
+  @include breakpoint(xxlarge) {
+    height: 96px;
+    padding-top: 16px;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 125%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent)
+      no-repeat;
+  }
+
+  > .grid-container {
+    max-width: 100%;
+    height: 100%;
+    margin: 0;
+
+    > .grid-x {
+      height: 100%;
+
+      > .cell {
+        height: 100%;
+      }
+    }
+
+    nav {
+      height: 100%;
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+/****************************************************
+    Logo
+****************************************************/
+header {
+  .header__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .header__logoLink {
+    display: block;
+    width: 140px;
+    transition: all 0.4s;
+    transform-origin: center left;
+
+    @include breakpoint(medium) {
+      width: 150px;
+    }
+
+    @include breakpoint(large) {
+      width: 170px;
+    }
+
+    @include breakpoint(xlarge) {
+      width: 190px;
+    }
+  }
+}
+
+/****************************************************
+    Common
+****************************************************/
+.primaryNav,
+.secondaryNav {
+  .nav__list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    @include breakpoint(medium) {
+      justify-content: space-between;
+    }
+  }
+
+  .nav__item {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  .nav__link {
+    position: relative;
+    height: 100%;
+    font-family: $display-font-stack;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 1.1;
+    color: #fff;
+    text-align: center;
+    letter-spacing: -0.02em;
+    padding: 0 0.5rem;
+
+    &:hover,
+    &:focus,
+    &.active {
+      outline: none;
+
+      &:before {
+        visibility: visible;
+        transform: scaleY(1);
+      }
+    }
+
+    &:before {
+      @include breakpoint(medium) {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 4px;
+        background-color: $highlight-color;
+        visibility: hidden;
+        transform: scaleY(0);
+        transform-origin: 50% 100%;
+        transition: all 0.1s ease-in-out 0s;
+      }
+    }
+  }
+}
+
+/****************************************************
+    Primary Nav
+****************************************************/
+.primaryNav {
+  .nav__list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 645px;
+  }
+
+  .nav__link {
+    @include breakpoint(medium) {
+      font-size: 15px;
+    }
+
+    @include breakpoint(xlarge) {
+      font-size: 17px;
+    }
+  }
+}
+
+/****************************************************
+    Secondary Nav
+****************************************************/
+.secondaryNav {
+  @include breakpoint(small only) {
+    margin: 0 !important;
+  }
+
+  @include breakpoint(medium) {
+    width: 32% !important;
+    max-width: 553px;
+  }
+
+  .nav__item {
+    @include breakpoint(medium) {
+      width: 18%;
+    }
+  }
+
+  .nav__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint(medium) {
+      font-size: 0.7em;
+    }
+  }
+
+  .nav__icon {
+    position: relative;
+    display: inline-block;
+
+    .svg-icon {
+      width: 28px;
+      height: 28px;
+
+      @include breakpoint(medium) {
+        width: 24px;
+      }
+
+      @include breakpoint(large) {
+        width: 30px;
+        height: 34px;
+      }
+    }
+  }
+
+  .nav__text {
+    margin-top: 3px;
+  }
+}
+
+/****************************************************
+    Secondary Nav - Wishlist
+****************************************************/
+.secondaryNav {
+  .wishlist {
+    .wishlist__badge {
+      display: block;
+      position: absolute;
+      top: 7%;
+      right: -1em;
+      min-width: 1.6em;
+      height: 1.6em;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 10px;
+      line-height: 1.5em;
+      color: #fff;
+      text-align: center;
+      padding: 0.1em;
+      background: $highlight-color;
+      border-radius: 50%;
+    }
+  }
+}
+
+/****************************************************
+	Sticky Header
+****************************************************/
+header.sticky {
+  // background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 1px 2px;
+
+  @supports (backdrop-filter: blur(5px)) or (-webkit-backdrop-filter: blur(5px)) {
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
+
+  @include breakpoint(medium) {
+    padding-top: 0;
+    height: 73px;
+  }
+
+  @include breakpoint(large) {
+    height: 80px;
+  }
+
+  @media screen and (min-width: 40em) and (max-height: $shortviewportheight) {
+    height: 73px;
+  }
+
+  &:before {
+    visibility: hidden;
+  }
+
+  // Logo
+  .header__logoLink {
+    @include breakpoint(medium) {
+      transform: scale(0.84);
+    }
+  }
+
+  #logofill {
+    fill: $brand-color;
+  }
+
+  // Menus
+  .nav__link {
+    color: $brand-color;
+  }
+
+  .secondaryNav {
+    .svg-map-pin-icon-white {
+      background-image: icon(map-pin-o, $brand-color);
+    }
+
+    .svg-heart-o-icon-white {
+      background-image: icon(heart-o, $brand-color);
+    }
+  }
+
+  .mobile-nav {
+    .menuIcon {
+      .menuIcon__lines,
+      .menuIcon__lines:before,
+      .menuIcon__lines:after {
+        background-color: $brand-color;
+      }
+    }
+
+    .mobile-nav__toggle__label {
+      color: $brand-color;
+    }
+  }
+}
+
+/****************************************************
+    Nav Search
+****************************************************/
+.nav__searchBar {
+  padding-right: 5%;
+
+  .nav__search {
+    position: relative;
+  }
+
+  .nav__searchInput {
+    height: 40px;
+    color: #fff;
+    background: rgba(#fff, 0.2);
+    padding: 0.3rem 45px 0.3rem 8%;
+    margin: 0;
+    border: 1px solid rgba(#fff, 0.6);
+    border-radius: 3rem;
+    transition: all 0.4s;
+
+    &::placeholder {
+      color: rgba(#fff, 0.8);
+    }
+
+    &:focus {
+      color: $text-color;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      &::placeholder {
+        color: rgba($black-color, 0.3);
+      }
+
+      + .nav__searchBtn {
+        .svg-search.icon-white {
+          background-image: icon(search, $brand-color);
+        }
+      }
+    }
+  }
+
+  .nav__searchBtn {
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    min-width: 40px;
+    max-width: 60px;
+
+    input {
+      display: none;
+    }
+
+    .svg-icon {
+      margin: 0 auto;
+      width: 24px;
+      height: 24px;
+    }
+
+    .search-icon-label {
+      .svg-icon {
+        margin: 0 auto;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+// Desktop Nav Search
+.secondaryNav {
+  .nav__searchBar {
+    width: 60%;
+    height: auto;
+  }
+}
+
+// Mobile Nav Search
+.mobNav {
+  .nav__searchBar {
+    width: 100%;
+    padding: 1em 40px;
+  }
+}
+
+// Sticky Nav Search
+header.sticky,
+.mobNav {
+  .nav__searchBar {
+    .nav__searchInput,
+    .nav__searchInput:focus {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ebebeb;
+      background: #fff;
+      color: $text-color;
+    }
+
+    .nav__searchInput {
+      &::placeholder {
+        color: rgba($text-color, 0.6);
+      }
+
+      &:focus {
+        &::placeholder {
+          color: rgba($text-color, 0.3);
+        }
+      }
+    }
+
+    .nav__searchBtn {
+      .svg-search {
+        background-image: icon(search, $brand-color);
+      }
+    }
+  }
+}

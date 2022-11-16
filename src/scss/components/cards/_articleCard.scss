@@ -1,0 +1,85 @@
+/****************************************************
+	
+    Article Card
+    
+****************************************************/
+.articleCard {
+  padding-bottom: 1.5em;
+
+  @include breakpoint(medium) {
+    padding-bottom: 2.3em;
+  }
+
+  .card__link {
+    display: block;
+    text-decoration: none;
+    margin: 0 auto;
+    transition: transform 0.2s linear;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-0.4rem);
+
+      @media (hover: none) {
+        transform: translateY(0);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .card__image {
+    display: inline-block;
+    width: 41.66667%;
+    vertical-align: top;
+
+    @include breakpoint(xlarge) {
+      width: 100%;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .card__content {
+    display: inline-block;
+    width: 58.33333%;
+    font-size: 15px;
+    padding: 0 0.5em;
+    vertical-align: top;
+
+    @include breakpoint(30em) {
+      font-size: 17px;
+    }
+
+    @include breakpoint(medium) {
+      padding: 0.1em 1em 0;
+      font-size: 20px;
+    }
+
+    @include breakpoint(large) {
+      font-size: 22px;
+    }
+
+    @include breakpoint(xlarge) {
+      width: 100%;
+      font-size: 20px;
+      padding: 0.5em 0.2em 0;
+    }
+  }
+
+  .card__category {
+    font-weight: 700;
+    font-size: 0.7em;
+    color: $grey-75-color;
+    margin: 0 0 0.1em;
+  }
+
+  .card__heading {
+    display: block;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+}

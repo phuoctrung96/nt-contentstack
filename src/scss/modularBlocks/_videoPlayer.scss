@@ -1,0 +1,245 @@
+/****************************************************
+
+	Video
+
+****************************************************/
+.video {
+  .video__link {
+    // display: flex;
+    // align-items: center;
+    // text-align: center;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 30%, #000 250%);
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .video__linkInner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .video__image {
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    width: 100%;
+    transform: translateY(-50%);
+    min-height: 100%;
+  }
+
+  .video__content {
+    position: relative;
+    width: 100%;
+    font-size: 22px;
+    text-shadow: $text-shadow;
+    padding: 10px 40px 5px;
+
+    @include breakpoint(30em) {
+      font-size: 24px;
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    @include breakpoint(medium) {
+      font-size: 31px;
+    }
+
+    @include breakpoint(large) {
+      font-size: 35px;
+    }
+
+    @include breakpoint(xlarge) {
+      font-size: 40px;
+    }
+  }
+
+  .video__title {
+    font-size: 1em;
+    line-height: 1.1;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+  }
+
+  .video__action {
+    display: block;
+    font-size: 0.55em;
+  }
+
+  .video__mute {
+    position: absolute;
+    width: 7%;
+    min-width: 40px;
+    max-width: 50px;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+
+    @media (min-width: 30em) {
+      bottom: 3%;
+      right: 2%;
+    }
+
+    .svg-icon {
+      position: absolute;
+      top: 0;
+      left: 22.5%;
+      width: 55%;
+      height: 100%;
+
+      @media (min-width: 30em) {
+        width: 85%;
+        left: 7.5%;
+      }
+    }
+  }
+
+  .video__player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+/****************************************************
+	Control
+****************************************************/
+.media-control {
+  margin: 0 auto 0.3em;
+  display: block;
+  width: 2.3em;
+  height: 2.3em;
+  text-align: center;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  transition: transform 0.15s;
+  position: relative;
+
+  @include breakpoint(30em) {
+    border-width: 4px;
+  }
+
+  @include breakpoint(medium) {
+    border-width: 5px;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.05);
+  }
+
+  .svg-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 48%;
+    height: 48%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/****************************************************
+	Playlist Video
+****************************************************/
+.video {
+  .video__playlist {
+    width: 100%;
+    background-color: #fff;
+    padding: 1rem 5%;
+
+    .playlist__item {
+      width: 50%;
+      margin: 0 2%;
+      opacity: 0.6;
+
+      @include breakpoint(medium) {
+        width: 33.33333%;
+        margin: 0 1.5%;
+      }
+
+      @include breakpoint(xlarge) {
+        width: 25%;
+        margin: 0 1%;
+      }
+
+      &.is-selected {
+        opacity: 1;
+      }
+    }
+
+    .playlist__link {
+      display: block;
+      text-decoration: none;
+      padding: 10px;
+      border: 2px solid transparent;
+
+      &:hover,
+      &:focus {
+        border-color: #eee;
+      }
+    }
+
+    .video__content {
+      width: 23%;
+      padding: 0;
+    }
+
+    .media-control {
+      width: 100%;
+      height: auto;
+      margin: 0;
+      border-width: 3px;
+    }
+
+    .video__title {
+      font-weight: 400;
+      font-size: 0.88em;
+      color: $text-color;
+      text-align: left;
+      text-transform: none;
+      margin: 0.5em 0 0;
+    }
+
+    .flickity-prev-next-button {
+      top: 100%;
+
+      &.next {
+        right: auto;
+        left: 50%;
+        margin-left: 5px;
+      }
+
+      &.previous {
+        right: 50%;
+        margin-right: 5px;
+        left: auto;
+      }
+
+      @include breakpoint(large) {
+        top: 50%;
+
+        &.next {
+          left: auto;
+          right: -30px;
+        }
+
+        &.previous {
+          left: -30px;
+          right: auto;
+        }
+      }
+    }
+  }
+}

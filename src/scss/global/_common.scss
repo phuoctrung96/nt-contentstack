@@ -1,0 +1,124 @@
+/****************************************************
+
+	Common Styles
+
+****************************************************/
+button {
+  text-align: left;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+  }
+}
+
+/************************************
+    Media
+************************************/
+img {
+  // alt text styles
+  font-size: 14px;
+  color: $text-color;
+}
+
+video,
+audio {
+  display: block;
+}
+
+figure {
+  margin: 0;
+}
+
+picture {
+  display: block;
+}
+
+/****************************************************
+	SVG
+****************************************************/
+svg {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+
+  &.icon-white {
+    fill: #fff;
+  }
+}
+
+.svg-icon {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  font-style: normal; // prevents unneeded italic versions of fonts from being downloaded
+}
+
+// to make an SVG scale fluidly, wrap it in a container div with class="svg-container"
+.svg-container {
+  position: relative;
+}
+
+.svg-container {
+  > svg,
+  .fallback-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+}
+
+.svg--full-width,
+.svg--full-width use {
+  width: 100%;
+}
+
+/****************************************************
+    Loading spinner
+    <i class="loader"></i>
+    <i class="loader loader--reverse"></i>
+    - You can control the size of the loader by overriding its width.
+    - .loader--reverse class changes the color to white
+****************************************************/
+.loader {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  font-style: normal;
+}
+
+.loader:before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: calc(100% - 16px);
+  border: 8px solid $grey-10-color;
+  border-left-color: $highlight-color;
+  border-radius: 50%;
+  animation: rotation 1s cubic-bezier(0.26, 0.59, 0.89, 0.51) infinite;
+}
+
+.loader--reverse:before {
+  border-left-color: #fff;
+}
+
+.loader:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

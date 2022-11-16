@@ -1,0 +1,91 @@
+/****************************************************
+
+	Mobile Nav
+
+****************************************************/
+.mobNav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: calc(100vh - 68px);
+  background: $brand-color;
+  overflow-y: scroll;
+  z-index: 1000;
+
+  .accordion {
+    border: none;
+
+    .accordion__content {
+      transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .accordion__contentInner {
+      padding: 0;
+    }
+  }
+
+  .mobMenu__link,
+  .accordion .accordion__heading {
+    display: block;
+    width: 100%;
+    font-family: $display-font-stack;
+    font-size: em(18px, 16);
+    line-height: 1.2;
+    color: #fff;
+    text-align: left;
+    padding: 0.8em 20px;
+    margin: 0;
+    border-bottom: 1px solid $brand-color-dark;
+    transition: all 0s 0.2s;
+    transition-property: background-color, border-color;
+
+    &:hover,
+    &:focus {
+      color: $highlight-color;
+    }
+  }
+
+  .accordion.active {
+    .mobMenu__link,
+    .accordion__heading {
+      background-color: $brand-color-dark;
+      border-bottom-color: $brand-color-dark-2;
+    }
+
+    .accordion.active {
+      .mobMenu__link,
+      .accordion__heading {
+        background: $brand-color-dark-2;
+        border-bottom-color: $brand-color-dark-3;
+      }
+    }
+  }
+
+  .accordion__content {
+    .mobMenu__link,
+    .accordion__heading {
+      padding-left: 30px;
+    }
+
+    .accordion__content {
+      .mobMenu__link,
+      .accordion__heading {
+        padding-left: 40px;
+      }
+    }
+  }
+
+  a {
+    &:hover,
+    &:focus {
+      .svg-heart-o-icon-white {
+        background-image: icon(heart-o, $highlight-color);
+      }
+
+      .svg-map-pin-icon-white {
+        background-image: icon(map-pin-o, $highlight-color);
+      }
+    }
+  }
+}

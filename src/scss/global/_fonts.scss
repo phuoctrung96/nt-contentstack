@@ -1,0 +1,61 @@
+/****************************************************
+
+	Fonts
+
+****************************************************/
+@mixin font($name, $path, $weight: normal, $style: normal, $display: swap) {
+  @font-face {
+    font-family: $name;
+    src: url($path + ".woff2") format("woff2"),
+      url($path + ".woff") format("woff"),
+      url($path + ".ttf") format("truetype");
+    font-weight: $weight;
+    font-style: $style;
+    font-display: $display;
+  }
+}
+
+/**********************************
+    Ubuntu
+**********************************/
+@include font(Ubuntu, "/fonts/Ubuntu/ubuntu-r", normal, normal, swap);
+@include font(Ubuntu, "/fonts/Ubuntu/ubuntu-ri", normal, italic, swap);
+@include font(Ubuntu, "/fonts/Ubuntu/ubuntu-b", bold, normal, swap);
+@include font(Ubuntu, "/fonts/Ubuntu/ubuntu-bi", bold, italic, swap);
+
+/**********************************
+    Open Sans
+**********************************/
+@include font(
+  "Open Sans",
+  "/fonts/OpenSans/opensans-regular",
+  normal,
+  normal,
+  swap
+);
+@include font(
+  "Open Sans",
+  "/fonts/OpenSans/opensans-regularitalic",
+  normal,
+  italic,
+  swap
+);
+@include font("Open Sans", "/fonts/OpenSans/opensans-bold", bold, normal, swap);
+@include font(
+  "Open Sans",
+  "/fonts/OpenSans/opensans-bolditalic",
+  bold,
+  italic,
+  swap
+);
+
+// Font
+//@include font(xxx, '/fonts/xxx/xxx-Thin', 100);
+//@include font(xxx, '/fonts/xxx/xxx-ExtraLight', 200);
+//@include font(xxx, '/fonts/xxx/xxx-Light', 300);
+//@include font(xxx, '/fonts/xxx/xxx-Regular', normal);
+//@include font(xxx, '/fonts/xxx/xxx-Medium', 500);
+//@include font(xxx, '/fonts/xxx/xxx-SemiBold', 600);
+//@include font(xxx, '/fonts/xxx/xxx-Bold', bold);
+//@include font(xxx, '/fonts/xxx/xxx-ExtraBold', 800);
+//@include font(xxx, '/fonts/xxx/xxx-Black', 900);

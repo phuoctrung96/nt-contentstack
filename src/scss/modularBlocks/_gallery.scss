@@ -1,0 +1,44 @@
+/****************************************************
+	
+    Gallery
+    
+****************************************************/
+.gallery {
+  .gallery__item {
+    margin-bottom: 2rem;
+
+    a {
+      color: $grey-text-color;
+      display: block;
+
+      &[target="_blank"]:after {
+        content: "";
+        display: inline-block;
+        width: 0.8em;
+        height: 0.8em;
+        margin: 0.4em 0 0 0.2em;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: icon(external-link, $grey-text-color);
+        vertical-align: top;
+      }
+    }
+  }
+
+  figcaption {
+    font-size: em(15px);
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    color: $grey-text-color;
+    padding: em(6px, 15) 0 0;
+  }
+
+  .gallery__image > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

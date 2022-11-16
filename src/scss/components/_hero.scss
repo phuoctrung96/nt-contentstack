@@ -1,0 +1,70 @@
+/****************************************************
+	
+    Hero
+    
+****************************************************/
+/* Sizes for when the hero is the first section on the page */
+$first-hero-height: 90vh;
+$first-hero-max-height: 1080px;
+
+/* Small-height hero sizes */
+$small-first-hero-height: 65vh;
+
+/****************************************************
+    Hero 
+****************************************************/
+.hero.bannerCarousel {
+  position: relative;
+  margin-top: -68px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+
+  @include breakpoint(medium) {
+    margin-top: -85px;
+    margin-bottom: 3rem;
+  }
+
+  @include breakpoint(large) {
+    margin-top: -96px;
+  }
+
+  &:before {
+    display: none;
+  }
+
+  &:after {
+    background-image: icon(curved-top-2, #fff);
+  }
+
+  .banner__slider {
+    height: $first-hero-height;
+    max-height: $first-hero-max-height;
+  }
+
+  .banner__content {
+    padding: 0.3rem 0 1rem;
+  }
+
+  //  video,
+  //  stream,
+  //  .slide > iframe {
+  //    height: $first-hero-height;
+  //    width: calc(16 / 9 * $first-hero-height);
+  //  }
+}
+
+/****************************************************
+    Hero - small
+****************************************************/
+.hero.bannerCarousel {
+  &.small-height {
+    .banner__slider {
+      height: $small-first-hero-height;
+      max-height: 1080px;
+    }
+
+    .banner__content {
+      padding: 0.3rem 0 1rem;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+/****************************************************
+
+    Content Styles
+
+****************************************************/
+.text {
+  a[target="_blank"] {
+    &:after {
+      content: "";
+      padding-right: 0.68em;
+      margin-left: 0.15em;
+      background: icon(external-link, $brand-color) no-repeat center 75%;
+      background-size: contain;
+    }
+  }
+}

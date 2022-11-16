@@ -1,0 +1,118 @@
+/****************************************************
+
+    Editorial Listing
+    
+****************************************************/
+.editorialListing {
+  .editorial__listing {
+    display: block;
+    font-size: em(13px, $body-font-size-small);
+    margin: 0;
+
+    @include breakpoint(30em) {
+      font-size: em(16px, $body-font-size-small);
+    }
+
+    @include breakpoint(large) {
+      font-size: em(17px);
+    }
+
+    @include breakpoint(xlarge) {
+      font-size: 1em;
+    }
+  }
+}
+
+/****************************************************
+    Editorial Listing - Card Sizes
+****************************************************/
+.editorialListing {
+  .editorial__listing {
+    .editorial__item {
+      list-style: none;
+      float: left;
+      clear: none;
+      padding: 0 1.25%;
+      margin-bottom: 2.4%;
+      transform: translateZ(0);
+
+      &.large {
+        width: 100%;
+      }
+
+      &.medium {
+        width: 100%;
+      }
+
+      &.small {
+        width: 50%;
+      }
+
+      @include breakpoint(medium) {
+        margin-bottom: 1.65%;
+
+        &.large {
+          width: 66.66667%;
+        }
+
+        &.medium {
+          width: 33.33333%;
+        }
+
+        &.small {
+          width: 33.33333%;
+        }
+      }
+
+      @include breakpoint(xlarge) {
+        &.large {
+          width: 50%;
+        }
+
+        &.small {
+          width: 25%;
+        }
+      }
+    }
+  }
+}
+
+/****************************************************
+    Editorial Listing - Normal Layout
+****************************************************/
+.editorialListing {
+  .editorial__listing {
+    .editorial__item {
+      @include breakpoint(medium) {
+        .editorial__item {
+          &.large {
+            &:not(:first-child) {
+              float: right;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/****************************************************
+    Editorial Listing - Reverse Layout
+****************************************************/
+.editorialListing {
+  .editorial__listing--reversed {
+    .editorial__item {
+      &:first-child {
+        float: right;
+      }
+
+      @include breakpoint(medium) {
+        &.large {
+          &:not(:first-child) {
+            float: left;
+          }
+        }
+      }
+    }
+  }
+}

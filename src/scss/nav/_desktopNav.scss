@@ -1,0 +1,204 @@
+/****************************************************
+
+	Desktop Menu
+
+****************************************************/
+.primaryNav__subnav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: calc(100vh - 81px);
+  height: auto;
+  padding: 2em 0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.09), 0 4px 8px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  z-index: 1000;
+
+  @supports (backdrop-filter: blur(10px)) or
+    (--webkit-backdrop-filter: blur(10px)) {
+    background-color: rgba(255, 255, 255, 0.85);
+    --webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
+  }
+
+  @include breakpoint(large) {
+    padding-top: 2.5em;
+  }
+
+  h3 {
+    color: $brand-color;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.5em;
+
+    @include breakpoint(large) {
+      font-size: 24px;
+    }
+  }
+
+  h4 {
+    display: block;
+    text-transform: none;
+    font-size: 17px;
+    line-height: 1.2;
+  }
+
+  .panel {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 4%;
+  }
+
+  a {
+    padding: 0;
+    color: $brand-color;
+
+    &:hover,
+    &:focus {
+      color: $highlight-color;
+
+      img {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  li a {
+    display: block;
+    font-family: $display-font-stack;
+    font-size: 16px;
+    line-height: 1.2;
+    padding: 0.4em 0;
+
+    @media screen and (min-width: 40em) and (max-height: 750px) {
+      padding-bottom: 0.5em;
+    }
+
+    @include breakpoint(large) {
+      font-size: 18px;
+      padding: 0.5em 0 0.8em;
+    }
+  }
+
+  a {
+    color: $brand-color;
+
+    &.button {
+      display: inline-block;
+      width: auto;
+      height: auto;
+      font-size: 14px;
+      line-height: 1.1;
+      color: #fff;
+      text-align: center;
+      padding: 9px 22px;
+      margin: 0.3em 0 0;
+      border: 0;
+      transition: all 0.2s linear;
+    }
+  }
+}
+
+/****************************************************
+	Places
+****************************************************/
+.primaryNav__subnav--places {
+  .places__popular {
+    column-count: 2;
+    column-gap: 1em;
+
+    li {
+      display: inline-block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .svg-container {
+    width: 60%;
+    margin-top: 16%;
+    z-index: -1;
+    overflow: visible;
+  }
+}
+
+/**************************************
+    Sub Menu - All
+***************************************/
+.navbar .primary-nav__subnav--places li,
+.navbar .primary-nav__subnav--image-headings li {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+
+.navbar .primary-nav__subnav {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.09), 0 4px 8px rgba(0, 0, 0, 0.18);
+
+  @supports (backdrop-filter: blur(10px)) or
+    (--webkit-backdrop-filter: blur(10px)) {
+    background-color: rgba(255, 255, 255, 0.85);
+    --webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
+  }
+
+  @include breakpoint(large) {
+    padding-top: 2.5em;
+  }
+
+  h3 {
+    color: $brand-color;
+    font: bold 22px/1 $display-font-stack;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.5em;
+    @include breakpoint(large) {
+      font-size: 24px;
+    }
+  }
+
+  h4 {
+    display: block;
+    text-transform: none;
+    font: 17px/1.2 $display-font-stack;
+  }
+
+  a.button {
+    color: #fff;
+    text-align: center;
+    font: bold 14px/1.1 $display-font-stack;
+    display: inline-block;
+    padding: 9px 22px;
+    margin: 0.3em 0 0;
+    height: auto;
+    width: auto;
+    border: 0;
+    transition: all 0.2s linear;
+  }
+
+  li a {
+    @media screen and (min-width: 40em) and (max-height: 750px) {
+      padding-bottom: 0.5em;
+    }
+    @include breakpoint(large) {
+      font-size: 18px;
+      padding: 0.5em 0 0.8em;
+    }
+  }
+}
+
+/**************************************
+    Sub Menu - Places
+***************************************/
+.navbar .primary-nav__subnav--places {
+  padding-bottom: 2.5em;
+  overflow: hidden;
+
+  .svg-container {
+    width: 60%;
+    margin-top: 16%;
+    z-index: -1;
+    overflow: visible;
+  }
+}

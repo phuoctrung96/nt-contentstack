@@ -1,0 +1,17 @@
+/****************************************************
+
+	FAQs
+
+****************************************************/
+.faqs {
+  font-size: 0.88889em;
+
+  .faq {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .faq__content {
+    margin-bottom: 2em;
+  }
+}

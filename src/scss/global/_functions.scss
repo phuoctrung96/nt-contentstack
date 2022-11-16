@@ -1,0 +1,105 @@
+/****************************************************
+
+	Functions
+
+****************************************************/
+
+/****************************************************
+	String Replace
+	Replace `$search` with `$replace` in `$string`
+	@author Hugo Giraudel
+	@param {String} $string - Initial string
+	@param {String} $search - Substring to replace
+	@param {String} $replace ('') - New value
+	@return {String} - Updated string
+  
+****************************************************/
+@function str-replace($string: "", $search, $replace: "") {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+  @return $string;
+}
+
+/****************************************************
+    Convert px to em
+    By default the context is 18px - this can be overridden by passing the second parameter.
+    Usage: em(36px) gives 2em, em(36px, 9px) gives 4em
+    See: https://css-tricks.com/snippets/sass/px-to-em-functions/
+    
+****************************************************/
+@function em($pixels, $context: $font-size-large) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return calc($pixels / $context) * 1em;
+}
+
+/****************************************************
+    Convert px to rem
+    same as above, but for rem. 1rem is always 16px
+    
+****************************************************/
+@function rem($pixels) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  $context: 16px;
+
+  @return calc($pixels / $context) * 1em;
+}
+
+/****************************************************
+    Function for managing z-index
+    Usage: z-index: z("modal");
+    See: https://www.sitepoint.com/better-solution-managing-z-index-sass/
+    
+****************************************************/
+@function z($layer) {
+  @if not map-has-key($z-layers, $layer) {
+    @warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
+  }
+
+  @return map-get($z-layers, $layer);
+}
+
+$z-layers: (
+  "header": 10000,
+  "modal": 10001,
+  "modal-content": 10002,
+);
+
+/**************************************
+    Languages Mixin
+    use to wrap a block of CSS in language selectors
+***************************************/
+@mixin languages($languages) {
+  @if $languages == "EastAsian" {
+    :lang(ja),
+    :lang(zh-Hans),
+    :lang(zh-Hant) {
+      @content;
+    }
+  } @else if $languages == "NonEnglish" {
+    :lang(ja),
+		/*:lang(zh-Hans),
+		:lang(zh-Hant),*/
+		:lang(fr),
+		:lang(it),
+		:lang(de) {
+      @content;
+    }
+  }
+}

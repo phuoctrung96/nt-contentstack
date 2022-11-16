@@ -1,0 +1,251 @@
+/****************************************************
+
+    East Asian Languages
+    
+****************************************************/
+@include languages(EastAsian) {
+  // reduce heading size
+  h1,
+  .bannerCarousel h2 {
+    font-size: 28px;
+    @include breakpoint(medium) {
+      font-size: 36px;
+    }
+    @include breakpoint(large) {
+      font-size: 44px;
+    }
+    @include breakpoint(xlarge) {
+      font-size: 52px;
+    }
+    @include breakpoint(xxlarge) {
+      font-size: 60px;
+    }
+  }
+
+  .bannerCarousel {
+    .slide__content,
+    h1,
+    h2,
+    .caption__content {
+      line-height: 1.1;
+    }
+  }
+
+  // section headings will always be 11 columns wide to avoid wrapping as much as possible
+  .section__heading-wrapper {
+    font-size: 0.7em;
+    width: 91.66667%;
+  }
+}
+
+:lang(ja) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: left;
+  }
+
+  // make the h1 wrapper 100% width
+  .bannerCarousel .banner .banner__inner .cell {
+    width: 91.66667%;
+  }
+
+  // centre section headings but align characters left if wrapped
+  .section__heading-wrapper {
+    text-align: center;
+
+    .section__heading {
+      display: inline-block;
+    }
+  }
+
+  // to centre module intro paragraphs
+  // .section__introduction {
+  // 	text-align: left;
+  // }
+
+  /****************************************************
+    Articles
+  ****************************************************/
+  section.article {
+    .article__audio-wrapper {
+      text-align: left;
+    }
+  }
+
+  /****************************************************
+    ATDW
+  ****************************************************/
+  section .atdw {
+    .profile-controls,
+    .side-panel--product-detail {
+      text-align: left;
+    }
+  }
+
+  /****************************************************
+    Banners
+  ****************************************************/
+  .bannerCarousel {
+    .banner,
+    h1,
+    h2,
+    .caption__content {
+      text-align: left;
+    }
+  }
+
+  /****************************************************
+    Button Rows
+  ****************************************************/
+  .btn-row {
+    text-align: left;
+  }
+
+  /****************************************************
+    Content
+  ****************************************************/
+  .content__introduction {
+    text-align: left;
+  }
+
+  /****************************************************
+    Destination Widgets
+  ****************************************************/
+  // section.destination-widgets {
+  //     .widget__title, .drive-time-guide, .widget__header-wrapper a {
+  //         text-align: left;
+  //         padding: 0 30px;
+  //     }
+  // }
+
+  // #modal_weather {
+  //     .weather-timeframe, th, td:first-child, .weather-period__month > div {
+  //         text-align: left;
+  //     }
+
+  //     .weather-period__month h1 {
+  //         text-align: center;
+  //     }
+  // }
+
+  /****************************************************
+    Footer
+  ****************************************************/
+  // footer {
+  //   h4,
+  //   .footer-nav,
+  //   .social-share,
+  //   .footer__logo {
+  //     text-align: left;
+  //   }
+
+  //   .selectboxit-container {
+  //     margin-left: 0;
+  //   }
+  // }
+
+  /****************************************************
+    Instagram
+  ****************************************************/
+  //   section.instagram {
+  //     .instagram-item__content {
+  //       text-align: left;
+  //     }
+  //   }
+
+  /****************************************************
+    Keep In Touch
+  ****************************************************/
+  section.keep-touch {
+    text-align: left;
+
+    .keep-touch__heading {
+      text-align: left;
+    }
+
+    .keep-touch__text {
+      padding: 0;
+    }
+
+    .keep-touch__input,
+    .keep-touch__submit {
+      margin-left: 0;
+    }
+  }
+
+  /****************************************************
+    Link Section
+  ****************************************************/
+  section.link-section {
+    .link-section__content,
+    .link-section__title {
+      text-align: left;
+    }
+
+    .link-section__text {
+      margin-left: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  /****************************************************
+    Gallery
+  ****************************************************/
+  .gallery {
+    .audio-item {
+      text-align: left;
+    }
+  }
+
+  /****************************************************
+    Video
+  ****************************************************/
+  .video {
+    .video__content,
+    .video__title {
+      text-align: left;
+    }
+  }
+
+  /****************************************************
+    Social Share Buttons
+  ****************************************************/
+  section.join-the-conversation {
+    text-align: left;
+  }
+}
+
+/************************************
+
+    All non-English Languages
+
+************************************/
+@include languages(NonEnglish) {
+  section.instagram {
+    .instagram-item__description {
+      display: none;
+    }
+  }
+}
+
+/************************************
+
+    Disable myTrip languages
+
+***********************************
+:lang(ja),
+:lang(zh-Hans),
+:lang(zh-Hant),
+:lang(fr),
+:lang(de),
+:lang(it) {
+	button.addtotrip,
+	.navbar .secondary-nav .wishlist {
+		display: none;
+	}
+}*/

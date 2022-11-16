@@ -1,0 +1,112 @@
+/****************************************************
+	
+    Accommodation Card
+    
+****************************************************/
+.dynamicCard {
+  position: relative;
+  padding-bottom: 1rem;
+
+  @include breakpoint(medium) {
+    padding-bottom: 1.875rem;
+  }
+
+  .card__link {
+    display: block;
+  }
+
+  .card__imageWrapper {
+    display: inline-block;
+    width: 33.33333%;
+    background-color: $grey-25-color;
+    vertical-align: top;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include breakpoint(medium) {
+      width: 100%;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  .card__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+
+  .card__content {
+    display: inline-block;
+    width: 66.66667%;
+    padding: 0 21px 0 2.5%;
+    vertical-align: top;
+
+    @include breakpoint(medium) {
+      width: 100%;
+      padding: 0;
+    }
+
+    p {
+      color: $brand-color;
+      font-size: 13px;
+      line-height: 1.25;
+      margin-bottom: 0.2em;
+
+      @include breakpoint(medium) {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .card__category {
+    color: #747275;
+    font-size: 11px;
+    line-height: 1.25;
+    font-weight: 700;
+    margin: 0 0 0.2em;
+  }
+
+  .card__heading {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.21053;
+    margin: 0 0 0.2em;
+
+    @include breakpoint(medium) {
+      font-size: 18px;
+    }
+  }
+
+  .star-rating {
+    line-height: 1;
+
+    .svg-icon {
+      width: 8px;
+      height: 8px;
+
+      + .svg-icon {
+        margin-left: 2px;
+      }
+    }
+  }
+
+  .addMyTrip {
+    position: absolute;
+    top: -3px;
+    right: -7px;
+    padding: 5px;
+
+    @include breakpoint(medium) {
+      top: 0;
+      right: 2px;
+      padding-top: 5px;
+
+      .svg-icon {
+        stroke: #fff;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+/****************************************************
+
+	Instagram
+
+****************************************************/
+.instagram {
+  .instagram-media {
+    &:not(.instagram-media-rendered) {
+      border: none !important;
+
+      + blockquote {
+        margin: 0;
+      }
+    }
+
+    @include breakpoint(medium) {
+      width: calc(100% - 32px) !important;
+    }
+  }
+
+  .instagram-media-registered {
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+}

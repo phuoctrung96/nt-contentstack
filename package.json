@@ -1,0 +1,79 @@
+{
+  "name": "gatsby-starter-default",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "@contentstack/json-rte-serializer": "^2.0.0",
+    "@reduxjs/toolkit": "^1.8.6",
+    "axios": "^1.1.3",
+    "classnames": "^2.3.2",
+    "flickity": "^2.3.0",
+    "foundation-sites": "^6.7.5",
+    "gatsby": "^4.24.8",
+    "gatsby-background-image": "^1.6.0",
+    "gatsby-plugin-catch-links": "^4.24.0",
+    "gatsby-plugin-gatsby-cloud": "^4.24.1",
+    "gatsby-plugin-google-tagmanager": "^4.24.0",
+    "gatsby-plugin-image": "^2.24.0",
+    "gatsby-plugin-layout": "^3.24.0",
+    "gatsby-plugin-manifest": "^4.24.0",
+    "gatsby-plugin-react-helmet": "^5.24.0",
+    "gatsby-plugin-react-svg": "^3.1.0",
+    "gatsby-plugin-robots-txt": "^1.7.1",
+    "gatsby-plugin-sass": "^5.24.0",
+    "gatsby-plugin-sharp": "^4.24.0",
+    "gatsby-plugin-sitemap": "^5.24.0",
+    "gatsby-plugin-typescript": "^4.24.0",
+    "gatsby-plugin-typescript-checker": "^1.1.1",
+    "gatsby-source-contentstack": "github:Joe-Edwards/gatsby-source-contentstack#fix/block-interfaces",
+    "gatsby-source-filesystem": "^4.24.0",
+    "gatsby-transformer-sharp": "^4.24.0",
+    "gbimage-bridge": "^0.2.2",
+    "prop-types": "^15.8.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-flickity-component": "^3.6.3",
+    "react-helmet": "^6.1.0",
+    "react-lazy-load": "^4.0.1",
+    "react-modal": "^3.16.1",
+    "react-player": "^2.11.0",
+    "react-redux": "^8.0.4",
+    "react-scroll": "^1.8.8",
+    "react-transition-group": "^4.4.5",
+    "redux": "^4.2.0",
+    "sass": "^1.55.0"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.3.1",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-helmet": "^6.1.5",
+    "@types/react-modal": "^3.13.1",
+    "@types/react-scroll": "^1.8.4",
+    "@types/react-transition-group": "^4.4.5",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}

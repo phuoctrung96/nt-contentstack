@@ -1,0 +1,127 @@
+/****************************************************
+
+    Dynamic Listing
+    
+****************************************************/
+.dynamicListing {
+  .listing__cta {
+    text-align: center;
+  }
+}
+
+/****************************************************
+    Filters
+****************************************************/
+.filter {
+  .filter__list {
+    list-style: none;
+    padding: 0;
+    margin-left: 0;
+
+    &.two-columns {
+      columns: 2;
+    }
+
+    &.three-columns {
+      column-count: 3;
+    }
+
+    &.four-columns {
+      column-count: 4;
+    }
+  }
+
+  .filter__item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 6px;
+  }
+
+  .checkbox {
+    position: relative;
+    font-size: 0.75em;
+    line-height: 21px;
+    color: $brand-color;
+
+    &.active {
+      &:before {
+        background-image: icon(check-square-o, $text-color);
+      }
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      position: relative;
+      top: 3px;
+      width: 16px;
+      height: 16px;
+      background-image: icon(square-o, $text-color);
+      background-size: cover;
+      margin-right: 5px;
+    }
+  }
+}
+
+/****************************************************
+    Filters - Rating
+****************************************************/
+.filter {
+  .stars-group {
+    display: inline-block;
+    margin-top: -5px;
+    vertical-align: middle;
+
+    .svg-icon {
+      width: 20px;
+      height: 20px;
+
+      + .svg-icon {
+        margin-left: 7px;
+      }
+    }
+  }
+
+  .active {
+    .stars-group {
+      .svg-star-full {
+        background-image: icon(star, $tennant-color);
+      }
+
+      .svg-star-o {
+        background-image: icon(star-o, $tennant-color);
+      }
+    }
+  }
+}
+
+/****************************************************
+    Filters - Budget
+****************************************************/
+.filter {
+  .box {
+    display: inline-block;
+    width: 79px;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    border: 2px solid $brand-color;
+    padding: 8px 0;
+    border-radius: 3px;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+}
+
+/****************************************************
+    Results
+****************************************************/
+.dynamicListing {
+  .listing__loading {
+    text-align: center;
+  }
+
+  .listing__noResults {
+    text-align: center;
+  }
+}

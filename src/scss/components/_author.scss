@@ -1,0 +1,61 @@
+/****************************************************
+
+	Author
+
+****************************************************/
+.author {
+  .author__inner {
+    padding: 2em 0;
+    border-top: 1px dotted $brand-color-light-2;
+    border-bottom: 1px dotted $brand-color-light-2;
+  }
+
+  .author__image {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+
+    @include breakpoint(30em) {
+      float: left;
+    }
+  }
+
+  .author__content {
+    font-family: $body-font-stack;
+    letter-spacing: -0.01em;
+
+    @include breakpoint(30em) {
+      padding-left: 135px;
+    }
+  }
+
+  .author__action {
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 25px;
+    color: $brand-color;
+  }
+
+  .author__name {
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 32px;
+    color: $text-color;
+    margin-bottom: 0.4em;
+  }
+
+  .author__bio {
+    font-size: 16px;
+    line-height: 24px;
+    color: $grey-text-color;
+  }
+
+  .author__link {
+    display: block;
+    font-size: 14px;
+    color: $brand-color;
+    text-decoration: underline;
+    margin-top: 1em;
+  }
+}

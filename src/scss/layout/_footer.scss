@@ -1,0 +1,353 @@
+/****************************************************
+
+	Footer
+
+****************************************************/
+footer {
+  position: relative;
+  font-family: $header-font-family;
+  font-size: 16px;
+  color: #fff;
+  background: $brand-color;
+  padding: 3rem 0 0;
+  margin-top: 18.33333%; // 352/1920, i.e. aspect ratio of top SVG
+
+  .footer__top {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    margin-bottom: -1px;
+    width: 100%;
+  }
+
+  a {
+    font-family: $header-font-family;
+    font-size: 1em;
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.85;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      opacity: 1;
+    }
+  }
+}
+
+/****************************************************
+	Footer Breadcrumbs
+****************************************************/
+footer {
+  .footer__breadcrumbs {
+    .breadcrumbs__heading {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 1em;
+      line-height: 1;
+      color: #fff;
+      padding-right: 0.27778em;
+      vertical-align: baseline;
+    }
+  }
+}
+
+/****************************************************
+	Footer Menu
+****************************************************/
+footer {
+  .footer__content {
+    h4 {
+      font-weight: 700;
+      font-size: 1.1875em;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: em(20, 19);
+    }
+
+    .footer__nav {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2.5rem;
+
+      @include breakpoint(medium) {
+        margin-bottom: 3.5rem;
+      }
+
+      .footer__navItem {
+        line-height: 1.1;
+        margin-bottom: 1.25em;
+      }
+    }
+  }
+}
+
+/****************************************************
+	Footer Acknowledge
+****************************************************/
+footer {
+  .footer__content {
+    .footer__aoc {
+      max-width: 600px;
+      font-size: em(13, 16);
+      font-family: $body-font-family;
+      line-height: 1.5;
+      margin-bottom: 3rem;
+
+      h3 {
+        width: 100%;
+        color: #fff;
+        font-size: 1.23077em;
+        margin: 0 0 0.5625em;
+      }
+
+      p {
+        margin-bottom: 0.7em;
+      }
+
+      a {
+        font-weight: 700;
+      }
+
+      .svg-icon {
+        width: 1.2em;
+        height: 1.2em;
+        margin-top: -0.1em;
+      }
+    }
+  }
+}
+
+/****************************************************
+	Footer Social Links
+****************************************************/
+footer {
+  .footer__content {
+    .footer__social {
+      list-style: none;
+      text-align: center;
+      padding: 0;
+      margin: 0 0 2.2rem;
+
+      @include breakpoint(large) {
+        margin-bottom: 3.5rem;
+      }
+
+      @include breakpoint(xlarge) {
+        text-align: left;
+        margin-left: -6px; // visual alignment to account for hover effect
+      }
+    }
+
+    .footer__socialItem {
+      display: inline-block;
+      margin: -7px 3% 0 0; // (36-24)/2 -1 for overshoot
+
+      @include breakpoint(xxlarge) {
+        margin-right: 6%;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .footer__socialLink {
+      position: relative;
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      transition: all 0.4s;
+
+      &[href*="facebook"] {
+        &:hover,
+        &:focus {
+          background: #1877f2;
+        }
+      }
+
+      &[href*="instagram"] {
+        &:hover,
+        &:focus {
+          background: radial-gradient(
+              circle farthest-corner at 35% 90%,
+              #fec564,
+              transparent 50%
+            ),
+            radial-gradient(
+              circle farthest-corner at 0 140%,
+              #fec564,
+              transparent 50%
+            ),
+            radial-gradient(
+              ellipse farthest-corner at 0 -25%,
+              #5258cf,
+              transparent 50%
+            ),
+            radial-gradient(
+              ellipse farthest-corner at 20% -50%,
+              #5258cf,
+              transparent 50%
+            ),
+            radial-gradient(
+              ellipse farthest-corner at 100% 0,
+              #893dc2,
+              transparent 50%
+            ),
+            radial-gradient(
+              ellipse farthest-corner at 60% -20%,
+              #893dc2,
+              transparent 50%
+            ),
+            radial-gradient(
+              ellipse farthest-corner at 100% 100%,
+              #d9317a,
+              transparent
+            ),
+            linear-gradient(
+              #6559ca,
+              #bc318f 30%,
+              #e33f5f 50%,
+              #f77638 70%,
+              #fec66d 100%
+            );
+        }
+      }
+
+      &[href*="twitter"] {
+        &:hover,
+        &:focus {
+          background: #55acee;
+        }
+      }
+
+      &[href*="youtube"] {
+        &:hover,
+        &:focus {
+          background: #cd201f;
+        }
+      }
+
+      &[href*="tripadvisor"] {
+        &:hover,
+        &:focus {
+          background: #00af87;
+        }
+      }
+
+      &[href*="tiktok"] {
+        &:hover,
+        &:focus {
+          background: #25f4ee;
+        }
+      }
+
+      &[href*="wechat"] {
+        &:hover,
+        &:focus {
+          background: #7bb32e;
+        }
+      }
+
+      &[href*="weibo"] {
+        &:hover,
+        &:focus {
+          background: #df2029;
+        }
+      }
+
+      &[href*="tudou"] {
+        &:hover,
+        &:focus {
+          background: #f60;
+        }
+      }
+
+      &[href*="youku"] {
+        &:hover,
+        &:focus {
+          background: #2593ff;
+        }
+      }
+
+      .svg-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin-top: -12px;
+        margin-left: -12px;
+        transition: all 0.1s;
+
+        &[href*="twitter"] {
+          margin-top: -11px;
+          margin-left: -11px;
+        }
+      }
+    }
+  }
+}
+
+/****************************************************
+	Footer Language
+****************************************************/
+footer {
+  .footer__content {
+    .footer__language {
+      max-width: 322px;
+      margin: 0 auto 3rem;
+
+      @include breakpoint(large) {
+        width: 228px;
+        margin-right: 0;
+      }
+
+      select {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/****************************************************
+	Footer Base
+****************************************************/
+footer {
+  .footer__base {
+    background: #19194f;
+    padding: 1.875rem 0 0;
+
+    .footer__logos {
+      display: inline-block;
+      margin: 0 auto 1.5rem;
+
+      @include breakpoint(medium) {
+        text-align: right;
+      }
+    }
+
+    .footer__copyright {
+      display: block;
+      font-size: 11px;
+      text-align: right;
+      margin: 0;
+      opacity: 0.85;
+    }
+
+    .footer__disclaimer {
+      display: block;
+      max-width: 800px;
+      font-size: 11px;
+      line-height: 1.5;
+      color: #fff;
+      margin: 0 0 3.5rem;
+      opacity: 0.85;
+
+      @include breakpoint(medium) {
+        margin-bottom: 1.875rem;
+      }
+    }
+  }
+}
